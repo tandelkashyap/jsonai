@@ -2,6 +2,16 @@
 <html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
+  <script>
+    (function() {
+      try {
+        var theme = localStorage.getItem('json-tools-theme');
+        if (theme) {
+          document.documentElement.setAttribute('data-theme', theme);
+        }
+      } catch (e) {}
+    })();
+  </script>
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
   <!-- Google tag (gtag.js) - Google Analytics -->
