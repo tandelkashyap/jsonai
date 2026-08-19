@@ -131,6 +131,12 @@ const Navbar = () => {
             </li>
           ))}
 
+          <li>
+            <RouteLink to="/blog/" activeClassName="active" onClick={closeNav}>
+              Blog
+            </RouteLink>
+          </li>
+
           <li className={`navbar-dropdown ${dropdownOpen ? 'open' : ''}`}>
             <button
               type="button"
@@ -205,6 +211,15 @@ const Navbar = () => {
               </RouteLink>
             </li>
           ))}
+          <li>
+            <RouteLink
+              to="/blog/"
+              activeClassName="active"
+              onClick={closeNav}
+            >
+              Blog
+            </RouteLink>
+          </li>
         </ul>
       </div>
     </nav>

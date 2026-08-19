@@ -2,6 +2,8 @@ import { writeFileSync } from 'fs'
 import { resolve, dirname } from 'path'
 import { fileURLToPath } from 'url'
 
+import { blogPosts } from '../src/data/blogPosts.js'
+
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
 const hostname = 'https://jsonai.online'
@@ -25,6 +27,8 @@ const routes = [
   { loc: '/contact',       changefreq: 'monthly', priority: '0.6' },
   { loc: '/terms',         changefreq: 'monthly', priority: '0.5' },
   { loc: '/privacy',       changefreq: 'monthly', priority: '0.5' },
+  { loc: '/blog',          changefreq: 'weekly',  priority: '0.7' },
+  ...blogPosts.map(post => ({ loc: `/blog/${post.slug}`, changefreq: 'monthly', priority: '0.6' }))
 ]
 
 const xml = `<?xml version="1.0" encoding="UTF-8"?>

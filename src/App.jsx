@@ -24,6 +24,8 @@ export const routes = [
       { path: 'terms', lazy: () => import('./pages/TermsOfService').then(m => ({ Component: m.default })) },
       { path: 'about', lazy: () => import('./pages/About').then(m => ({ Component: m.default })) },
       { path: 'contact', lazy: () => import('./pages/Contact').then(m => ({ Component: m.default })) },
+      { path: 'blog', lazy: () => import('./pages/BlogList').then(m => ({ Component: m.default })) },
+      { path: 'blog/:slug', lazy: () => import('./pages/BlogPost').then(m => ({ Component: m.default })) },
       { path: '*', lazy: () => import('./pages/NotFound').then(m => ({ Component: m.default })) },
     ],
   },

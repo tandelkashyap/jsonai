@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import { blogPosts } from './src/data/blogPosts.js';
 
 const distDir = path.resolve(process.cwd(), 'dist');
 const indexHtmlPath = path.join(distDir, 'index.html');
@@ -328,6 +329,27 @@ const routes = [
       <p>By using JSON AI, you agree to run these tools directly in your browser. All tools are provided free of charge, with no guarantees of uptime or suitability for custom production tasks. Use responsibly.</p>
     `
   },
+  {
+    route: '/blog',
+    title: 'JSON AI Blog – JSON Utilities and Developer Guides',
+    description: 'Read the latest updates, tutorials, and insights on JSON, developer tools, and client-side web development from the JSON AI team.',
+    breadcrumbName: 'Blog',
+    fallbackHtml: `
+      <h2>JSON AI Blog</h2>
+      <p>Updates, tutorials, and insights on JSON, developer tools, and client-side web development.</p>
+    `
+  },
+  ...blogPosts.map(post => ({
+    route: `/blog/${post.slug}`,
+    title: `${post.title} | JSON AI Blog`,
+    description: post.excerpt,
+    breadcrumbName: post.title,
+    fallbackHtml: `
+      <h2>${post.title}</h2>
+      <p>${post.excerpt}</p>
+      ${post.content}
+    `
+  }))
 ];
 
 const escapeHtml = (value) =>

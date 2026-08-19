@@ -24,6 +24,7 @@ const MORE_TOOLS = [
 const COMPANY = [
   { to: '/about/',   label: 'About' },
   { to: '/contact/', label: 'Contact' },
+  { to: '/blog/',    label: 'Blog' },
   { to: '/privacy/', label: 'Privacy Policy' },
   { to: '/terms/',   label: 'Terms of Service' },
 ];
