@@ -12,10 +12,6 @@
   box-sizing: border-box;
 }
 
-.no-transition * {
-  transition: none !important;
-}
-
 html {
   -webkit-text-size-adjust: 100%;
   -moz-tab-size: 4;
@@ -250,7 +246,11 @@ body {
   color: var(--text-primary);
   font-family: var(--font-ui);
   font-size: var(--text-base);
-  transition: background-color var(--transition-slow), color var(--transition-slow);
+}
+
+.theme-transitioning,
+.theme-transitioning * {
+  transition: background-color var(--transition-slow), color var(--transition-slow), border-color var(--transition-slow) !important;
 }
 
 /* Subtle background noise/texture for premium feel */

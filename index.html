@@ -9,12 +9,6 @@
         if (theme) {
           document.documentElement.setAttribute('data-theme', theme);
         }
-        document.documentElement.classList.add('no-transition');
-        window.addEventListener('load', function() {
-          setTimeout(function() {
-            document.documentElement.classList.remove('no-transition');
-          }, 0);
-        });
       } catch (e) {}
     })();
   </script>
