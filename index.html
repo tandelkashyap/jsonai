@@ -6,9 +6,10 @@
     (function() {
       try {
         var theme = localStorage.getItem('json-tools-theme');
-        if (theme) {
-          document.documentElement.setAttribute('data-theme', theme);
+        if (!theme) {
+          theme = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
         }
+        document.documentElement.setAttribute('data-theme', theme);
       } catch (e) {}
     })();
   </script>
