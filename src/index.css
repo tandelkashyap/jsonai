@@ -12,6 +12,10 @@
   box-sizing: border-box;
 }
 
+.no-transition * {
+  transition: none !important;
+}
+
 html {
   -webkit-text-size-adjust: 100%;
   -moz-tab-size: 4;
